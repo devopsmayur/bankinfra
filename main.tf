@@ -76,6 +76,19 @@ resource "google_storage_bucket_iam_binding" "public_read" {
   members = ["allUsers"]
 }
 
+resource "google_compute_firewall" "ssh_open_to_world" {
+  name    = "allow-ssh-world"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+  target_tags   = ["ssh"]
+}
+
 resource "google_sql_database_instance" "app_database" {
   name             = "app-db-instance"
   database_version = "MYSQL_5_7"
