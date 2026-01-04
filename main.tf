@@ -9,7 +9,7 @@ resource "google_compute_instance" "web_server" {
   machine_type = "f1-micro"
   zone         = "us-central1-a"
 
-  boot_disk {
+  boo {
     initialize_params {
       image = "debian-cloud/debian-11"
     }
