@@ -48,7 +48,7 @@ resource "google_compute_firewall" "web_sg" {
 }
 
 resource "google_storage_bucket" "app_data_bucket" {
-  name                        = "my-app-data-bucket-123456"
+  name                        = "my-app-data-buct-123456"
   location                    = "US"
   force_destroy               = true
   uniform_bucket_level_access = false
